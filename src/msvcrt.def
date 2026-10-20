@@ -1,0 +1,8 @@
+LIBRARY MSVCRT
+EXPORTS
+setlocale
+__iob_func
+fprintf
+_snwprintf
+wcslen
+memcpy

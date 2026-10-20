@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="noeject.vcxproj" Id="c3e113e2-ecf8-4357-8437-8ab3da6f2180" />
+</Solution>

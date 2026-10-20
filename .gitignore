@@ -1,0 +1,11 @@
+/build/
+
+/vs2026/*
+!/vs2026/*.slnx
+!/vs2026/*.vcxproj
+!/vs2026/*.filters
+
+/.vs/
+/.vscode/
+
+.DS_Store

@@ -1,0 +1,36 @@
+name: x64 x86
+on:
+  workflow_dispatch
+jobs:
+  build:
+    name: Build and Release
+    runs-on: windows-2025-vs2026
+    permissions: write-all
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Download Repo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh repo clone ${{ github.repository }} -- --depth=1 .
+      - name: Get Version
+        run: |
+          $VERLINE = Select-String -CaseSensitive -List -Raw -Pattern '^#define\s+MY_VER\s+' -Path src\noeject.c
+          if ($VERLINE -NotMatch '"(\d+\.\d+.\d+)"') {
+            echo "Can't get MY_VER from src\noeject.c."
+            exit 1
+          }
+          $MY_VER = $matches[1]
+          echo "MY_VER=$MY_VER" >> "$env:GITHUB_ENV"
+      - name: Build Repo
+        shell: cmd
+        run: |
+          build.bat
+      - name: Upload Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        working-directory: 'build'
+        run: |
+          gh release create "v$env:MY_VER" --title "v$env:MY_VER" *.7z
