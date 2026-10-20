@@ -14,7 +14,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh repo clone ${{ github.repository }} -- --depth=1 .
+          gh repo clone ${{ github.repository }} . -- --depth=1
       - name: Get Version
         run: |
           $VERLINE = Select-String -CaseSensitive -List -Raw -Pattern '^#define\s+MY_VER\s+' -Path src\noeject.c
