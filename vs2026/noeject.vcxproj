@@ -84,7 +84,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <EntryPointSymbol>startup</EntryPointSymbol>
-      <AdditionalDependencies>ucrtd.lib;msvcrtd.lib;vcruntimed.lib;kernel32.lib;shell32.lib;ole32.lib;advapi32.lib;setupapi.lib;taskschd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrtd.lib;msvcrtd.lib;vcruntimed.lib;kernel32.lib;shell32.lib;ole32.lib;advapi32.lib;setupapi.lib;taskschd.lib;mstask.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
     </Link>
     <Manifest>
@@ -109,7 +109,7 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <EntryPointSymbol>startup</EntryPointSymbol>
-      <AdditionalDependencies>ucrt.lib;msvcrt.lib;vcruntime.lib;kernel32.lib;shell32.lib;ole32.lib;advapi32.lib;setupapi.lib;taskschd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrt.lib;msvcrt.lib;vcruntime.lib;kernel32.lib;shell32.lib;ole32.lib;advapi32.lib;setupapi.lib;taskschd.lib;mstask.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
@@ -129,7 +129,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <EntryPointSymbol>startup</EntryPointSymbol>
-      <AdditionalDependencies>ucrtd.lib;msvcrtd.lib;vcruntimed.lib;kernel32.lib;shell32.lib;ole32.lib;advapi32.lib;setupapi.lib;taskschd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrtd.lib;msvcrtd.lib;vcruntimed.lib;kernel32.lib;shell32.lib;ole32.lib;advapi32.lib;setupapi.lib;taskschd.lib;mstask.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
     </Link>
     <Manifest>
@@ -154,18 +154,21 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <EntryPointSymbol>startup</EntryPointSymbol>
-      <AdditionalDependencies>ucrt.lib;msvcrt.lib;vcruntime.lib;kernel32.lib;shell32.lib;ole32.lib;advapi32.lib;setupapi.lib;taskschd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ucrt.lib;msvcrt.lib;vcruntime.lib;kernel32.lib;shell32.lib;ole32.lib;advapi32.lib;setupapi.lib;taskschd.lib;mstask.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\dev.c" />
     <ClCompile Include="..\src\noeject.c" />
-    <ClCompile Include="..\src\schd.c" />
+    <ClCompile Include="..\src\sch.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\schd.h" />
+    <ClInclude Include="..\src\dev.h" />
+    <ClInclude Include="..\src\sch.h" />
+    <ClInclude Include="..\src\show.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

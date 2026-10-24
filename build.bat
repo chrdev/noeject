@@ -18,6 +18,7 @@ echo No building environment for x64.
 set errorlevel=1
 exit /b
 )
+nmake cleanall
 nmake release
 call :CLEAR_VSENV
 

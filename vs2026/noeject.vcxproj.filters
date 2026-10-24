@@ -18,12 +18,21 @@
     <ClCompile Include="..\src\noeject.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\schd.c">
+    <ClCompile Include="..\src\sch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\schd.h">
+    <ClInclude Include="..\src\sch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dev.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\show.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

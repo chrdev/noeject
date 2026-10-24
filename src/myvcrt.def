@@ -1,0 +1,10 @@
+LIBRARY MSVCRT
+EXPORTS
+_iob
+__set_app_type
+_snwprintf
+fflush
+fprintf
+memcpy
+setlocale
+wcslen
